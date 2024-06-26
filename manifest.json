@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Email Spam Detector",
     "version": "1.0",
-    "description": "Detect spam emails using sentiment analysis and text classification.",
+    "description": "softeng2",
     "permissions": [
       "activeTab",
       "storage"
