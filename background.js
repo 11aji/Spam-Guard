@@ -1,16 +1,20 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === 'analyzeEmail') {
+  if (request.action === 'analyzeEmail') {
       let emailContent = request.content;
-      // Perform sentiment analysis and text classification
-      let result = analyzeEmail(emailContent);
-      sendResponse({ result: result });
-    }
-  });
-  
-  function analyzeEmail(content) {
-    // Dummy implementation - replace with actual model or API call
-    let spamWords = ['lottery', 'prize', 'winner', 'click here', 'free'];
-    let spamScore = spamWords.reduce((acc, word) => acc + (content.includes(word) ? 1 : 0), 0);
-    return spamScore > 2 ? 'Spam' : 'Not Spam';
+      analyzeEmail(emailContent).then(result => sendResponse({ result: result }));
+      return true;  // Keeps the message channel open until `sendResponse` is called
   }
-  
+});
+
+function analyzeEmail(content) {
+  return fetch('http://localhost:8080/analyze_email', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ content: content })
+  })
+  .then(response => response.json())
+  .then(data => data.result)
+  .catch(error => console.error('Error:', error));
+}
