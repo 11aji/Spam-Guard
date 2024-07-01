@@ -3,7 +3,11 @@ function scrapeEmailDetails() {
   let emailDetails = [];
 
   emails.forEach(email => {
-    const senderElement = email.querySelector('.yX.xY .yP') || email.querySelector('.yW .zF');
+    let senderElement = email.querySelector('.yX.xY .yP') || email.querySelector('.yW .zF');
+    if (senderElement == email.querySelector('.yW .zF')) {
+      email.style.background = 'red';
+    }
+    console.log(senderElement);
     const subjectElement = email.querySelector('.bog');
     const snippetElement = email.querySelector('.y2');
 
