@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Spam Guard",
+  "version": "1.0",
+  "description": "Detects spam emails",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "http://127.0.0.1:8080",
+    "https://mail.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "cn.png",
+      "48": "cn.png",
+      "128": "cn.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ]
+}
