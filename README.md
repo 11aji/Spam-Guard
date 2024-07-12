@@ -1,3 +1,9 @@
+TO CLONE: 
+1. git clone https://github.com/11aji/Spam-Guard
+
+TO INSTALL DEPENDENCIES:
+1. pip install -r requirements.txt
+
 TO RUN THE SERVER:
 1. python app_customModel.py 
 
