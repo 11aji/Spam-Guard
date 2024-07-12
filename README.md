@@ -11,6 +11,11 @@ TO ACCESS THE EXTENSION:
 1. Go to your browser's extension settings
 2. Enable developer mode
 3. Load unpacked
-4. Then open Spam-Guard/extensions folder
+4. Open Spam-Guard/extensions folder
 5. Run the extension
+
+TO CHECK EMAILS: (Make sure the server is running)
+1. Open GMail.com
+2. Open the Spam Guard Extension
+3. Press "Check Emails" button
 
