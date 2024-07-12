@@ -1,10 +1,10 @@
 TO RUN THE SERVER:
-> python app_customModel.py 
+1. python app_customModel.py 
 
 TO ACCESS THE EXTENSION:
-> Go to your browser's extension settings
-> Enable developer mode
-> Load unpacked
-> Then open Spam-Guard/extensions folder
-> Run the extension
+1. Go to your browser's extension settings
+2. Enable developer mode
+3. Load unpacked
+4. Then open Spam-Guard/extensions folder
+5. Run the extension
 
